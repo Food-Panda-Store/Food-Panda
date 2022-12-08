@@ -8,6 +8,7 @@ public class FoodPandaApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(FoodPandaApplication.class, args);
+		System.out.println("Project Started....");
 	}
 
 }
