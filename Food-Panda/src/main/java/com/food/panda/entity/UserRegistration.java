@@ -85,16 +85,13 @@ public class UserRegistration {
 	}
 	@Override
 	public String toString() {
-		return "User_Registration [UserRegistrationId=" + UserRegistrationId + ", UserRegistrationName="
+		return "UserRegistration [UserRegistrationId=" + UserRegistrationId + ", UserRegistrationName="
 				+ UserRegistrationName + ", UserRegistrationEmail=" + UserRegistrationEmail
 				+ ", UserRegistrationNumber=" + UserRegistrationNumber + ", UserRegistrationPassword="
 				+ UserRegistrationPassword + ", UserRegistrationConfiramPassword=" + UserRegistrationConfiramPassword
-				+ ", getUserRegistrationId()=" + getUserRegistrationId() + ", getUserRegistrationName()="
-				+ getUserRegistrationName() + ", getUserRegistrationEmail()=" + getUserRegistrationEmail()
-				+ ", getUserRegistrationNumber()=" + getUserRegistrationNumber() + ", getUserRegistrationPassword()="
-				+ getUserRegistrationPassword() + ", getUserRegistrationConfiramPassword()="
-				+ getUserRegistrationConfiramPassword() + "]";
+				+ "]";
 	}
+	
 	
 	
 
