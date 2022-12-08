@@ -96,13 +96,8 @@ public class UserAddress {
 	@Override
 	public String toString() {
 		return "UserAddress [UserAddressId=" + UserAddressId + ", UserHouseNumber=" + UserHouseNumber
-				+ ", UserAreaName=" + UserAreaName + ", UserTownName=" + ", UserCityName=" + UserCityName
-				+ ", UserStateName=" + UserStateName + ", UserPinCode=" + UserPinCode + ", UserCountryName="
-				+ UserCountryName + ", getUserAddressId()=" + getUserAddressId() + ", getUserHouseNumber()="
-				+ getUserHouseNumber() + ", getUserAreaName()=" + getUserAreaName() + ", getUserTownName()="
-				+ ", getUserCityName()=" + getUserCityName() + ", getUserStateName()="
-				+ getUserStateName() + ", getUserPinCode()=" + getUserPinCode() + ", getUserCountryName()="
-				+ getUserCountryName() + "]";
+				+ ", UserAreaName=" + UserAreaName + ", UserCityName=" + UserCityName + ", UserStateName="
+				+ UserStateName + ", UserPinCode=" + UserPinCode + ", UserCountryName=" + UserCountryName + "]";
 	}
-
+	
 }
