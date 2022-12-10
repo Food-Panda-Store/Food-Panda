@@ -24,6 +24,9 @@ public class UserRegistration {
 	private String UserRegistrationPassword;
 	@Column(name="User_Registration_Cofiram_Password")
 	private String UserRegistrationConfiramPassword;
+	@Column(name="User_Role")
+	private String UserRole="User";
+	
 	public long getUserRegistrationId() {
 		return UserRegistrationId;
 	}
@@ -60,8 +63,15 @@ public class UserRegistration {
 	public void setUserRegistrationConfiramPassword(String userRegistrationConfiramPassword) {
 		UserRegistrationConfiramPassword = userRegistrationConfiramPassword;
 	}
+	
+	public String getUserRole() {
+		return UserRole;
+	}
+	public void setUserRole(String userRole) {
+		UserRole = userRole;
+	}
 	public UserRegistration(long userRegistrationId, String userRegistrationName, String userRegistrationEmail,
-			String userRegistrationNumber, String userRegistrationPassword, String userRegistrationConfiramPassword) {
+			String userRegistrationNumber, String userRegistrationPassword, String userRegistrationConfiramPassword,String userRole) {
 		super();
 		UserRegistrationId = userRegistrationId;
 		UserRegistrationName = userRegistrationName;
@@ -69,15 +79,17 @@ public class UserRegistration {
 		UserRegistrationNumber = userRegistrationNumber;
 		UserRegistrationPassword = userRegistrationPassword;
 		UserRegistrationConfiramPassword = userRegistrationConfiramPassword;
+		UserRole=userRole;
 	}
 	public UserRegistration(String userRegistrationName, String userRegistrationEmail, String userRegistrationNumber,
-			String userRegistrationPassword, String userRegistrationConfiramPassword) {
+			String userRegistrationPassword, String userRegistrationConfiramPassword,String userRole) {
 		super();
 		UserRegistrationName = userRegistrationName;
 		UserRegistrationEmail = userRegistrationEmail;
 		UserRegistrationNumber = userRegistrationNumber;
 		UserRegistrationPassword = userRegistrationPassword;
 		UserRegistrationConfiramPassword = userRegistrationConfiramPassword;
+		UserRole=userRole;
 	}
 	public UserRegistration() {
 		super();
@@ -88,7 +100,7 @@ public class UserRegistration {
 		return "UserRegistration [UserRegistrationId=" + UserRegistrationId + ", UserRegistrationName="
 				+ UserRegistrationName + ", UserRegistrationEmail=" + UserRegistrationEmail
 				+ ", UserRegistrationNumber=" + UserRegistrationNumber + ", UserRegistrationPassword="
-				+ UserRegistrationPassword + ", UserRegistrationConfiramPassword=" + UserRegistrationConfiramPassword
+				+ UserRegistrationPassword + ", UserRegistrationConfiramPassword=" + UserRegistrationConfiramPassword + ", UserRole=" +UserRole 
 				+ "]";
 	}
 	

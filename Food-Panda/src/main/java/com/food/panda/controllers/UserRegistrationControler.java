@@ -2,11 +2,14 @@ package com.food.panda.controllers;
 
 import javax.servlet.http.HttpSession;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.food.panda.entity.UserRegistration;
 import com.food.panda.repository.UserRegistrationRepository;
@@ -17,29 +20,28 @@ public class UserRegistrationControler {
 	@Autowired
 	private UserRegistrationRepository userRegistrationRepository;
 	
-	@GetMapping("/")
-	public String home() {
-		return "home";
-	}
+	@Autowired
+	private BCryptPasswordEncoder bCryptPasswordEncoder;
+	
+
 	
 	@GetMapping("/register")
 	public String register() {
 		return "register";
 	}
 	
-	@PostMapping("/register")
+	@RequestMapping("/register")
 	public String Registration(@ModelAttribute UserRegistration userRegistration, HttpSession session) {
+		
 
 		System.out.println(userRegistration);
+		userRegistration.setUserRegistrationPassword(bCryptPasswordEncoder.encode(userRegistration.getUserRegistrationPassword()));  
 		
 		userRegistrationRepository.save(userRegistration);
 		session.setAttribute("message", "Done...");
 		return "register";
 	}
 	
-	@GetMapping("/login")
-	public String Login() {
-		return "login";
-	}
+	
 
 }
