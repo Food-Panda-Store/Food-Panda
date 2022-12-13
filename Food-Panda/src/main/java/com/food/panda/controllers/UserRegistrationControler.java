@@ -3,9 +3,9 @@ package com.food.panda.controllers;
 import javax.servlet.http.HttpSession;
 
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -34,8 +34,9 @@ public class UserRegistrationControler {
 	public String Registration(@ModelAttribute UserRegistration userRegistration, HttpSession session) {
 		
 
-		System.out.println(userRegistration);
-		userRegistration.setUserRegistrationPassword(bCryptPasswordEncoder.encode(userRegistration.getUserRegistrationPassword()));  
+		//System.out.println(userRegistration);
+		userRegistration.setUserRegistrationPassword(bCryptPasswordEncoder.encode(userRegistration.getUserRegistrationPassword()));
+		userRegistration.setUserRegistrationConfiramPassword(bCryptPasswordEncoder.encode(userRegistration.getUserRegistrationConfiramPassword()));
 		
 		userRegistrationRepository.save(userRegistration);
 		session.setAttribute("message", "Done...");
